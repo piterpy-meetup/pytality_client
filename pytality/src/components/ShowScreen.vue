@@ -11,7 +11,7 @@
           />
         </v-flex>
         <v-flex md4>
-
+          <fighter-screen/>
         </v-flex>
         <v-flex md4>
           <snippet-editor
@@ -28,11 +28,12 @@
 
 <script>
   import SnippetEditor from './SnippetEditor'
+  import FighterScreen from './FighterScreen'
   import axios from 'axios'
 
   export default {
     name: "ShowScreen",
-    components: { SnippetEditor },
+    components: { SnippetEditor, FighterScreen },
     data () {
       return{
         snippetCode: '',

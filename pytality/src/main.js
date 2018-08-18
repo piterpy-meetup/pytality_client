@@ -10,13 +10,11 @@ import store from './store'
 import ShowScreen from './components/ShowScreen'
 
 Vue.use(Vuetify)
-// Vue.use(VueSocketio, 'http://socketserver.com:1923', store);
 
 Vue.config.productionTip = false
 
 const routes = {
-  '/': App,
-  '/editor': ShowScreen
+  '/': ShowScreen,
 }
 
 /* eslint-disable no-new */

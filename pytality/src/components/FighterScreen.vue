@@ -1,5 +1,7 @@
 <template>
-
+  <div>
+    тут тип есть визуализация где люди дерутся
+  </div>
 </template>
 
 <script>
