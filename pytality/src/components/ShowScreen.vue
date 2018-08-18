@@ -5,6 +5,8 @@
         <v-flex md4>
           <snippet-editor
             :place="'left'"
+            :username="'SomeUser'"
+            :wins="1"
           />
         </v-flex>
         <v-flex md4>
@@ -13,6 +15,8 @@
         <v-flex md4>
           <snippet-editor
             :place="'right'"
+            :username="'Dima'"
+            :wins="2"
           />
         </v-flex>
       </v-layout>
