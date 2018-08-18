@@ -8,14 +8,16 @@ import VueSocketio from 'vue-socket.io'
 import store from './store'
 
 import HelloWorld from './components/HelloWorld'
+import ShowScreen from './components/ShowScreen'
 
 Vue.use(Vuetify)
-Vue.use(VueSocketio, 'http://socketserver.com:1923', store);
+// Vue.use(VueSocketio, 'http://socketserver.com:1923', store);
 
 Vue.config.productionTip = false
 
 const routes = {
   '/': App,
+  '/editor': ShowScreen
 }
 
 /* eslint-disable no-new */
