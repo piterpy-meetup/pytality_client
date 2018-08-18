@@ -3,9 +3,6 @@
   <v-content :style="'border-' + (place === 'right' ? 'left' : 'right') + ': 2px solid black; height: 100px'">
     <v-layout align-center justify-center column fill-height>
       <div class="display-1">{{ username }}</div>
-      <v-layout align-center row>
-        <div v-for="n in wins" style="border-radius: 50%; border: 3px solid red; background-color: red; padding: 7px"/>
-      </v-layout>
       <v-card>
         <textarea
           style="height: 45vw; width: 30vw; resize: none"
@@ -24,7 +21,7 @@
 <script>
   export default {
     name: "SnippetEditor",
-    props: ['place', 'username', 'wins'],
+    props: ['place', 'username'],
     data() {
       return{
         snippetCode: 'asdf\n    sdf',
