@@ -7,6 +7,7 @@
             :place="'left'"
             :username="'SomeUser'"
             :snippetCode="snippetCode"
+            :for_dev="false"
           />
         </v-flex>
         <v-flex md4>
@@ -17,6 +18,7 @@
             :place="'right'"
             :username="'Dima'"
             :snippetCode="snippetCode"
+            :for_dev="false"
           />
         </v-flex>
       </v-layout>

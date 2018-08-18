@@ -11,6 +11,7 @@
         />
       </v-card>
       <v-btn
+        v-if="for_dev"
         color="success"
         @click="submitCode"
       >
@@ -27,7 +28,7 @@
 
   export default {
     name: "SnippetEditor",
-    props: ['place', 'username', 'snippetCode'],
+    props: ['place', 'username', 'snippetCode', 'for_dev'],
     data() {
       return{
         socket: io(proccess.env.BASE_URL)
