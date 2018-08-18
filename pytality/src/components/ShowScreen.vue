@@ -42,7 +42,8 @@
     },
     methods: {
       getSnippet(){
-        axios.get(process.env.BASE_URL + '/snippets/next/').then((response) => {
+        console.log(process.env.BASE_URL + '/api/snippets/next')
+        axios.get(process.env.BASE_URL + '/api/snippets/next/').then((response) => {
           console.log(response)
           this.snippetCode = response.data['code']
           this.$store.state.snippet.code = this.snippetCode
@@ -51,6 +52,9 @@
           this.$store.state.snippet.new = true
         })
       }
+    },
+    mounted() {
+      this.getSnippet()
     }
   }
 </script>
