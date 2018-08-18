@@ -5,11 +5,15 @@
       <div class="display-1">{{ username }}</div>
       <v-card>
         <textarea
+          @change="sendChanges"
           style="height: 45vw; width: 30vw; resize: none"
           v-model="snippetCode"
         />
       </v-card>
-      <v-btn color="success">
+      <v-btn
+        color="success"
+        @click="submitCode"
+      >
         check code
       </v-btn>
     </v-layout>
@@ -19,15 +23,31 @@
 </template>
 
 <script>
+  import io from 'socket.io-client'
+
   export default {
     name: "SnippetEditor",
-    props: ['place', 'username'],
+    props: ['place', 'username', 'snippetCode'],
     data() {
       return{
-        snippetCode: 'asdf\n    sdf',
+        socket: io(proccess.env.BASE_URL)
       }
     },
     mounted(){
+    },
+    methods:{
+      sendChanges() {
+        this.socket.emit('Test', {
+          user: this.username,
+          snippet: this.snippetCode
+        })
+      },
+      submitCode(){
+        this.socket.emit('Submit', {
+          user: this.username,
+          submit: true
+        })
+      }
     }
   }
 </script>
