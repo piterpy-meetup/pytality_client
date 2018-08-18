@@ -7,7 +7,6 @@ import 'vuetify/dist/vuetify.min.css'
 import VueSocketio from 'vue-socket.io'
 import store from './store'
 
-import HelloWorld from './components/HelloWorld'
 import ShowScreen from './components/ShowScreen'
 
 Vue.use(Vuetify)
