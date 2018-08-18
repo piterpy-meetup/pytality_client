@@ -42,13 +42,13 @@
     },
     methods: {
       getSnippet(){
-        axios.get(proccess.env.BASE_URL + '/snippets/next/').then((response) => {
+        axios.get(process.env.BASE_URL + '/snippets/next/').then((response) => {
           console.log(response)
           this.snippetCode = response.data['code']
-          this.$store.snippet.code = this.snippetCode
+          this.$store.state.snippet.code = this.snippetCode
           this.timeToSolve = response.data['time_to_solve']
-          this.$store.snippet.timeToSolve = this.timeToSolve
-          this.$store.snippet.new = true
+          this.$store.state.snippet.timeToSolve = this.timeToSolve
+          this.$store.state.snippet.new = true
         })
       }
     }

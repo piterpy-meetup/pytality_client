@@ -25,6 +25,17 @@
   export default {
     name: "DeveloperScreen",
     components: { SnippetEditor, FighterScreen },
+    data () {
+      return{
+        snippetCode: ''
+      }
+    },
+    watch: {
+      'store.snippet.new': function () {
+        alert('someee')
+        this.snippetCode = this.$store.state.snippet.code
+      }
+    }
   }
 </script>
 

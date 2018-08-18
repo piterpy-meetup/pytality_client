@@ -22,13 +22,12 @@ const routes = {
 
 const store = new Vuex.Store({
   state: {
-
+    snippet: {
+      code: '',
+      timeToSolve: 0,
+      new: false
+    }
   },
-  snippet: {
-    code: '',
-    timeToSolve: 0,
-    new: false
-  }
 })
 
 /* eslint-disable no-new */

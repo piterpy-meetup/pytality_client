@@ -31,7 +31,7 @@
     props: ['place', 'username', 'snippetCode', 'forDev'],
     data() {
       return{
-        socket: io(proccess.env.BASE_URL)
+        socket: io(process.env.BASE_URL)
       }
     },
     mounted(){
