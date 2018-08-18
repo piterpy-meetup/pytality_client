@@ -31,9 +31,13 @@
       }
     },
     watch: {
-      'store.snippet.new': function () {
-        alert('someee')
-        this.snippetCode = this.$store.state.snippet.code
+      'store.state.snippet.new': function () {
+        if (this.$store.state.snippet.new === true) {
+          this.snippetCode = this.$store.state.snippet.code
+        }
+        else {
+          this.snippetCode = ''
+        }
       }
     }
   }

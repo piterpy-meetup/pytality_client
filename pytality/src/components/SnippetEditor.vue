@@ -6,7 +6,7 @@
       <v-card>
         <textarea
           @change="sendChanges"
-          style="height: 45vw; width: 30vw; resize: none"
+          :style="'height: 45vw; width: ' + (forDev ? 45 : 30) +'vw; resize: none; font-size: 18px'"
           v-model="snippetCode"
         />
       </v-card>
