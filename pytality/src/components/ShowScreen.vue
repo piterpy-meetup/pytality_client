@@ -7,7 +7,7 @@
             :place="'left'"
             :username="'SomeUser'"
             :snippetCode="snippetCode"
-            :for_dev="false"
+            :forDev="false"
           />
         </v-flex>
         <v-flex md4>
@@ -18,7 +18,7 @@
             :place="'right'"
             :username="'Dima'"
             :snippetCode="snippetCode"
-            :for_dev="false"
+            :forDev="false"
           />
         </v-flex>
       </v-layout>
@@ -45,7 +45,10 @@
         axios.get(proccess.env.BASE_URL + '/snippets/next/').then((response) => {
           console.log(response)
           this.snippetCode = response.data['code']
+          this.$store.snippet.code = this.snippetCode
           this.timeToSolve = response.data['time_to_solve']
+          this.$store.snippet.timeToSolve = this.timeToSolve
+          this.$store.snippet.new = true
         })
       }
     }

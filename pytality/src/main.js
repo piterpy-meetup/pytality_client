@@ -5,21 +5,36 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VueSocketio from 'vue-socket.io'
-import store from './store'
+import Vuex from 'vuex'
 
 import ShowScreen from './components/ShowScreen'
+import DeveloperScreen from './components/DeveloperScreen'
 
 Vue.use(Vuetify)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
 const routes = {
   '/': ShowScreen,
+  '/dev': DeveloperScreen
 }
+
+const store = new Vuex.Store({
+  state: {
+
+  },
+  snippet: {
+    code: '',
+    timeToSolve: 0,
+    new: false
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   data: {
     currentRoute: window.location.pathname
   },
@@ -30,3 +45,4 @@ new Vue({
   },
   render (h) { return h(this.ViewComponent) }
 })
+
